@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const bot = new Discord.Client({ fetchAllMembers: true });
 const fs = require("fs");
+const bot = new Discord.Client({ fetchAllMembers: true });
 
 // Try json config first, otherwise use Env
 try {
@@ -25,7 +25,7 @@ bot.startup = new Date();
 
 // Load plugins
 fs.readdir("./plugins", (err, files) => {
-  if (err) console.log(err);
+  if (err) bot.log(err);
   let c = 0;
   files.forEach((f) =>  {
     if (f.split(".")[1] === "js") {
@@ -37,7 +37,7 @@ fs.readdir("./plugins", (err, files) => {
   files.forEach((f) => {
     delete require.cache[require.resolve(`./plugins/${f}`)];
   });
-  console.log(`Loaded ${c} plugins.`);
+  bot.log(`Loaded ${c} plugins.`);
 });
 
 bot.on("message", (msg) => {
@@ -53,7 +53,7 @@ bot.on("message", (msg) => {
 });
 
 bot.on("ready", () => {
-  bot.log(`RaidBot is ready to serve ${bot.users.size} users.`);
+  bot.log(`RaidBot is ready! Now serving ${bot.users.size} users.`);
 });
 
 bot.on("error", console.error);
