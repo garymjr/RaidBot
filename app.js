@@ -10,7 +10,8 @@ try {
     bot.config = {
       botToken: process.env.botToken,
       prefix: process.env.prefix,
-      ownerid: process.env.ownerid
+      ownerid: process.env.ownerid,
+      battlenetApiKey: process.env.battlenetApiKey
     };
   } else {
     throw "No config found, exiting!";
@@ -20,6 +21,7 @@ try {
 // Extend bot
 bot.log = (msg) => { console.log(msg) };
 bot.plugins = new Discord.Collection();
+bot.startup = new Date();
 
 // Load plugins
 fs.readdir("./plugins", (err, files) => {
