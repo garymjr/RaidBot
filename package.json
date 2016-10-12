@@ -1,0 +1,22 @@
+{
+  "name": "raidbot",
+  "version": "1.0.0",
+  "description": "A Discord bot for raiding guilds in World of Warcraft",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garymjr/raidbot.git"
+  },
+  "author": "Gary Murray",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garymjr/raidbot/issues"
+  },
+  "homepage": "https://github.com/garymjr/raidbot#readme",
+  "dependencies": {
+    "discord.js": "^9.3.0"
+  }
+}
