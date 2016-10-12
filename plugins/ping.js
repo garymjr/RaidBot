@@ -1,5 +1,5 @@
 exports.run = (bot, msg, params) => {
-  console.log("pong!");
+  msg.channel.sendMessage(`<@${msg.author.id}> pong!`);
 };
 
 exports.config = {
