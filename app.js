@@ -25,7 +25,7 @@ bot.plugins = new Discord.Collection();
 fs.readdir("./plugins", (err, files) => {
   if (err) console.log(err);
   let c = 0;
-  files.forEach((f) => {
+  files.forEach((f) =>  {
     if (f.split(".")[1] === "js") {
       let props = require(`./plugins/${f}`);
       bot.plugins.set(props.help.name, props);
