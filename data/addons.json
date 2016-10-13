@@ -1,0 +1,32 @@
+{
+  "dbm": {
+    "name": "Deadly Boss Mods",
+    "url": "https://mods.curse.com/addons/wow/deadly-boss-mods",
+    "required": true
+  },
+  "exorsus": {
+    "name": "Exorsus Raid Tools",
+    "url": "https://mods.curse.com/addons/wow/exorsus-raid-tool",
+    "required": true
+  },
+  "rclootcouncil": {
+    "name": "RCLootCouncil",
+    "url": "https://mods.curse.com/addons/wow/rclootcouncil",
+    "required": true
+  },
+  "weakauras": {
+    "name": "WeakAuras",
+    "url": "https://mods.curse.com/addons/wow/weakauras-2",
+    "required": false
+  },
+  "gtfo": {
+    "name": "GTFO",
+    "url": "https://mods.curse.com/addons/wow/gtfo",
+    "required": false
+  },
+  "details": {
+    "name": "Details!",
+    "url": "https://mods.curse.com/addons/wow/details",
+    "required": false
+  }
+}
