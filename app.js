@@ -21,7 +21,6 @@ try {
 // Extend bot
 bot.log = (msg) => { console.log(msg) };
 bot.plugins = new Discord.Collection();
-bot.startup = new Date();
 
 // Load plugins
 fs.readdir("./plugins", (err, files) => {

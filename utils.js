@@ -1,21 +1,25 @@
-// utils.formatTime - Formats time as H hour(s) M minute(s) S second(s)
-exports.formatTime = (hours, minutes, seconds) => {
-  let time_string = "";
-  if (hours > 0 && hours < 2) {
-    time_string += `${hours} hour`;
-  } else if (hours > 0) {
-    time_string += `${hours} hours`;
+// utils.formatUptime - Formats the bots uptime as a string
+exports.formatUptime = (bot) => {
+  let uptime = bot.uptime / 1000; 
+  let h = Math.floor(uptime / 3600);
+  let m = Math.floor((uptime / 60) % 60);
+  let s = Math.floor(uptime) % 60;
+  let uptime_arr = new Array();
+  if (h > 1) {
+    uptime_arr.push(`${h} hours`);
+  } else if (h === 1) {
+    uptime_arr.push(`${h} hour`);
   }
-  if (minutes > 0 && minutes < 2) {
-    time_string += `${minutes} minute`;
-  } else if (minutes > 0) {
-    time_string += `${minutes} minutes`;
+  if (m > 1) {
+    uptime_arr.push(`${m} minutes`);
+  } else if (m === 1) {
+    uptime_arr.push(`${m} minute`);
   }
-  if (seconds > 0 && seconds < 2) {
-    time_string += `${seconds} second`;
-  } else if (seconds > 0) {
-    time_string += `${seconds} seconds`;
+  if (s > 1) {
+    uptime_arr.push(`${s} seconds`);
+  } else if (s === 1) {
+    uptime_arr.push(`${s} second`);
   }
 
-  return time_string;
+  return uptime_arr.join(", ");
 };

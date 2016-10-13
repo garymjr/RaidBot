@@ -1,11 +1,8 @@
 const utils = require("../utils.js");
 
 exports.run = (bot, msg, params) => {
-  let time = new Date();
-  let h = time.getHours() - bot.startup.getHours();
-  let m = time.getMinutes() - bot.startup.getMinutes();
-  let s = time.getSeconds() - bot.startup.getSeconds();
-  let uptime = utils.formatTime(h, m, s);
+  let uptime = utils.formatUptime(bot);
+  bot.log(bot.uptime);
   msg.channel.sendMessage(`<@${msg.author.id}> Pong! Bot uptime: ${uptime}.`);
 };
 
