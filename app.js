@@ -48,7 +48,7 @@ bot.on("message", (msg) => {
   if (bot.plugins.has(command)) {
     cmd = bot.plugins.get(command);
   }
-  if (cmd.config.enabled) cmd.run(bot, msg, params);
+  if (cmd && cmd.config.enabled) cmd.run(bot, msg, params);
 });
 
 bot.on("ready", () => {
